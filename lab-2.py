@@ -27,26 +27,26 @@
 # print(search_book())
 
 
-def bibliographic_generator():
-    from random import randrange
-    result = [randrange(1, 9411) for x in range(20)]
+# def bibliographic_generator():
+#     from random import randrange
+#     result = [randrange(1, 9411) for x in range(20)]
 
-    with open ('books.csv', 'r') as f:
-        number = 0
-        books = [0] * 20
-        for string in f:
-            my_book = string.split(';')
-            for i in range(20):
-                if number == result[i]:
-                    books[i] = f'{my_book[3]}. {my_book[1]} - {my_book[6][6:10]}'
-            number += 1
+#     with open ('books.csv', 'r') as f:
+#         number = 0
+#         books = [0] * 20
+#         for string in f:
+#             my_book = string.split(';')
+#             for i in range(20):
+#                 if number == result[i]:
+#                     books[i] = f'{my_book[3]}. {my_book[1]} - {my_book[6][6:10]}'
+#             number += 1
 
-    with open ('result.txt', 'w') as fh:
-        i = 0
-        for num, line in enumerate(result):
-            line = books[i]
-            fh.write(f'{num + 1}. {line}\n')
-            i += 1
+#     with open ('result.txt', 'w') as fh:
+#         i = 0
+#         for num, line in enumerate(result):
+#             line = books[i]
+#             fh.write(f'{num + 1}. {line}\n')
+#             i += 1
 
-print(bibliographic_generator())
+# print(bibliographic_generator())
 
