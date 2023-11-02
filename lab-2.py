@@ -27,7 +27,7 @@
 # print(search_book())
 
 
-def bibliographic_search():
+def bibliographic_generator():
     from random import randrange
     result = [randrange(1, 9411) for x in range(20)]
 
@@ -48,5 +48,5 @@ def bibliographic_search():
             fh.write(f'{num + 1}. {line}\n')
             i += 1
 
-print(bibliographic_search())
+print(bibliographic_generator())
 
