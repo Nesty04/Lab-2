@@ -1,5 +1,3 @@
-
-
 # def books_1():
 #     with open('books.csv','r') as fh:
 #         count = 0
@@ -15,7 +13,7 @@
 # def search_book():
 #     list = []
 #     author = input('Введите ФИО автора книги:\n')
-#     with open('books.csv') as fh:
+#     with open('books.csv', 'r') as fh:
 #         for string in fh:
 #             my_book = string.split(';')
 #             if my_book[4] == author and float(my_book[7]) >= 150:
@@ -31,14 +29,14 @@
 #     from random import randrange
 #     result = [randrange(1, 9411) for x in range(20)]
 
-#     with open ('books.csv', 'r') as f:
+#     with open ('books-en.csv', 'r') as f:
 #         number = 0
 #         books = [0] * 20
 #         for string in f:
 #             my_book = string.split(';')
 #             for i in range(20):
 #                 if number == result[i]:
-#                     books[i] = f'{my_book[3]}. {my_book[1]} - {my_book[6][6:10]}'
+#                     books[i] = f'{my_book[2]}. {my_book[1]} - {my_book[3]}'
 #             number += 1
 
 #     with open ('result.txt', 'w') as fh:
@@ -50,3 +48,23 @@
 
 # print(bibliographic_generator())
 
+
+# def additional_task():
+#     publishers = []
+#     most_popular = []
+#     with open('books-en.csv', 'r') as fh:
+#         fisrt_line = fh.readline()
+#         for string in fh:
+#             my_book = string.split(';')
+#             publishers.append(my_book[4])
+#             name, downloads = str(my_book[1]), int(my_book[-2])
+#             most_popular += [[name, downloads]]
+#         most_popular.sort(key = lambda k:k[1], reverse = True)
+
+#         print('Издетельства:', set(publishers))
+
+#         print('Самые поплярные книги:')
+#         for i in range(20):
+#             print(f'{i + 1}. {most_popular[i][0]}')
+        
+# print(additional_task())
